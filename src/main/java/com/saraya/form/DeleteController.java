@@ -14,8 +14,8 @@ public class DeleteController {
 	TodoService todo;
 	
 	@RequestMapping(value="/delete", method=RequestMethod.GET)
-	public String handleDeletion(@RequestParam("delId") Integer id, Model model) {
-		todo.delete((int) id);
+	public String handleDeletion(@RequestParam int delId) {
+		todo.delete(delId);
 		return "redirect:list";
 	}
 

@@ -3,6 +3,8 @@ package com.saraya.form;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import java.util.Iterator;
@@ -19,8 +21,8 @@ public class TodoService {
 		todos.add(new Todo("babacar","Spring Boot", new Date(), false));
 		todos.add(new Todo("tidiani","AWS", new Date(), false));
 	}
-
-	//List<Todo> theTDL= new ArrayList<Todo>();
+	
+	// List<Todo> todosToRemove = new ArrayList<Todo>();
 	
 	public ArrayList<Todo> retrieveAll() {
 		return todos;
@@ -32,12 +34,19 @@ public class TodoService {
 		while (it.hasNext()) {
 			Todo elt = it.next();
 			if (elt.getId() == id) {
-				todos.remove(id-1);
-			}else {
-				continue;
+				//todosToRemove.add(elt);
+				it.remove();
 			}
 		}
+		//todos.removeAll(todosToRemove);
 	}
+	
+	// Delete Functionality using FP paradigm
+	public void deleteByStream(int id) {
+			todos = (ArrayList<Todo>) todos.stream()
+					.filter(e -> !(e.getId()==id))
+					.collect(Collectors.toList());
+		}
 	
 	// Add funtionality
 	public void add(String username, String desc, boolean isDone) {
