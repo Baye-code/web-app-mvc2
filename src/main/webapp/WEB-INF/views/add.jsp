@@ -14,7 +14,7 @@
                 <label for="isDone" class="form-label">isDone</label>
                 <input type="text" class="form-control" placeholder="Add an isDone" name="addIsDone">
                 <br>
-                <button type="submit" class="btn btn-success btn-sm">Add</button>
+                <button type="submit" class="btn btn-success btn-sm">Adding</button>
              </div>        
 		</form>
 	</div>

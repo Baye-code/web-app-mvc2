@@ -16,10 +16,12 @@ public class TodoService {
 	private static ArrayList<Todo> todos= new ArrayList<Todo>();
 	
 	static {
-		todos.add(new Todo("babacar","Spring Mvc", new Date(), false));
-		todos.add(new Todo("tidiani","Angular", new Date(), false));
-		todos.add(new Todo("babacar","Spring Boot", new Date(), false));
-		todos.add(new Todo("tidiani","AWS", new Date(), false));
+		todos.add(new Todo("Babacar","Spring Mvc", new Date(), false));
+		todos.add(new Todo("Tidiani","Angular", new Date(), false));
+		todos.add(new Todo("Diémé","Spring Boot", new Date(), false));
+		todos.add(new Todo("Baye","AWS Azure GCP", new Date(), false));
+		todos.add(new Todo("Ndiaye","Python", new Date(), false));
+		todos.add(new Todo("Tall","Django", new Date(), false));
 	}
 	
 	// List<Todo> todosToRemove = new ArrayList<Todo>();
@@ -51,6 +53,32 @@ public class TodoService {
 	// Add funtionality
 	public void add(String username, String desc, boolean isDone) {
 		todos.add(new Todo(username,desc, new Date(), isDone));
+	}
+	
+	// Get the Id for update
+//	public Todo findByIdwithIterator(int uId) {
+//		Iterator<Todo> it = todos.iterator();
+//		while (it.hasNext()) {
+//			Todo elt = it.next();
+//			if (elt.getId() == uId) {
+//				return elt;
+//			}
+//		}
+//		return null;
+//	}
+	
+	public Todo findById(int uId) {
+		for(Todo todo : todos) {
+			if(todo.getId() == uId) {
+				return todo;
+			}
+		}
+		return null;
+	}
+	
+	public void updateTodo(Todo todo) {
+		todos.remove(todo);
+		todos.add(todo);
 	}
 
 }

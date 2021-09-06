@@ -1,7 +1,11 @@
 package com.saraya.form;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
+
+import javax.validation.constraints.Size;
 
 public class Todo {
 	
@@ -9,9 +13,19 @@ public class Todo {
 	
 	private int id;
 	private String username;
+	@Size(min=5, message="Please enter at least 10 characters")
 	private String desc;
 	private Date targetDate;
 	private boolean isDone;
+	
+	public String formatDate() {
+		DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+		return df.format(this.targetDate).toString();
+	}
+	
+	public Todo() {
+		
+	}
 	
 	public Todo(String username, String desc, Date targetDate, boolean isDone) {
 		super();

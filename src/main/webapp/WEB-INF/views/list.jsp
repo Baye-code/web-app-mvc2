@@ -31,10 +31,13 @@
 							<td colspan="2">${ todo.username}</td>
 							<td colspan="2">${ todo.desc }</th>
 							<td colspan="1">${ todo.isDone()}</td>
-							<td colspan="1">${ todo.targetDate}</td>
+							<td colspan="1">${ todo.formatDate()}</td>
 							<td colspan="2">
 								<a class = "btn btn-danger" href="/delete?delId=${ todo.id }" onclick="return confirm('Are you sure ?')">
 									Delete
+								</a>
+								<a class = "btn btn-warning" href="/update?uId=${ todo.id }" onclick="return confirm('You will be redirect into the Update page')">
+									Update
 								</a>
 							</td>
 						</tr>
@@ -43,8 +46,9 @@
 			</table>
 			<br>
 	</div>	
-	<p><a href="/add" class="btn btn-warning">Click here >></a> 
+	<p><a href="/add" class="btn btn-secondary">Click here >></a> 
 				to add a new training
 	</p>
+
 </div>
 <%@ include file="..\common\footer.jspf" %>
