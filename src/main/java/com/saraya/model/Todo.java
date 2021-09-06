@@ -1,4 +1,4 @@
-package com.saraya.form;
+package com.saraya.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
