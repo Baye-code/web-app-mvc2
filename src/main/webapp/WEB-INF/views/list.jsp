@@ -16,6 +16,7 @@
 		     </div>
 		     <br>
 			<table class="table table-striped">
+				<caption><spring:message code="todo.caption" /></caption>
 				  <thead>
 				    <tr>
 				      <th scope="col">ID</th>
@@ -29,7 +30,7 @@
 				    	<tr>
 							<th>${ todo.id }</th>
 							<td colspan="2">${ todo.username}</td>
-							<td colspan="2">${ todo.desc }</th>
+							<td colspan="2">${ todo.desc }</td>
 							<td colspan="1">${ todo.isDone()}</td>
 							<td colspan="1">${ todo.formatDate()}</td>
 							<td colspan="2">

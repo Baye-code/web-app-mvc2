@@ -10,6 +10,7 @@ import javax.validation.constraints.Size;
 public class Todo {
 	
 	static int count = 0;
+	//Counter count = new Counter();
 	
 	private int id;
 	private String username;
@@ -30,6 +31,7 @@ public class Todo {
 	public Todo(String username, String desc, Date targetDate, boolean isDone) {
 		super();
 		this.id = ++count ;
+		//this.id = count.increment();
 		this.username = username ;
 		this.desc = desc ;
 		this.targetDate = targetDate ;
